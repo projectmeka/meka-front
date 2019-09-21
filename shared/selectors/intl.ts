@@ -1,5 +1,5 @@
-import cookie from 'react-cookie'
+import storage from 'utils/storage'
 
 export const getInitialLang = () => ({
-  locale: cookie.load('lang') || 'en'
+  locale: storage.getItemSync('lang') || 'en'
 })

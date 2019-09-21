@@ -1,10 +1,10 @@
 import { takeEvery } from 'redux-saga/effects'
 import { Action } from 'redux-actions'
-import cookie from 'react-cookie'
+import storage from 'utils/storage'
 import * as actions from 'actions/intl'
 
 function setLocale(action: Action<object>) {
-  cookie.save('lang', action.payload, {
+  storage.setItem('lang', action.payload, false, {
     path: '/',
     domain: 'test.com',
     expires: new Date(Date.now() + (3600 * 1000 * 24 * 365))

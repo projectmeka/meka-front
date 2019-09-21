@@ -55,5 +55,10 @@
     "browser": true,
     "node": true,
     "mocha": true
+  },
+    "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
   }
 }

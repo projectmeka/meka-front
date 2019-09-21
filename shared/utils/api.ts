@@ -1,19 +1,25 @@
-export const fetchBase = (method: string = 'GET', endPoint: string = '/hello', params: object = {}, customeHeaders: object = {}) => {
-  let url = 'https://www.example.com' + endPoint
-  const token = 'Bearer test token'
+import storage from 'utils/storage'
 
-  const headers = {
+export const fetchBase = async (method: string = 'GET', endPoint: string = '/hello', params: object = {}, customeHeaders: object = {}) => {
+  let url = `http://cb174c25.ngrok.io${endPoint}`
+
+  const headers: { Accept: string, 'Content-Type': string, Authorization?: any } = {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    Authorization: token,
     ...customeHeaders
+  }
+
+  const token = await storage.getItem('meka_token')
+  if (token) {
+    const authorization = token && `Bearer ${token}`
+    headers.Authorization = authorization || null
   }
 
   const options: any = { method, headers }
 
   if (method === 'GET') {
     const queryString: string = `${Object.keys(params).map(k => [k, params[k]].map(encodeURIComponent).join('=')).join('&')}`
-    if (queryString) url += '?' + queryString
+    if (queryString) url += `?${queryString}`
   } else if (method === 'POST' || method === 'PUT') {
     if (headers['Content-Type'] === 'application/x-www-form-urlencoded') {
       options.body = `${Object.keys(params).map(k => [k, params[k]].join('=')).join('&')}`
@@ -46,3 +52,5 @@ export const fetchBase = (method: string = 'GET', endPoint: string = '/hello', p
     return null
   })
 }
+
+export const getUserInfo = (params: any) => fetchBase('GET', '/api/users/profile', params)

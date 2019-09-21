@@ -1,7 +1,8 @@
 import App from 'containers/App'
 import NoMatch from 'components/NoMatch'
 import {
-  Home
+  Home,
+  Oauth
 } from 'routes/sync'
 
 const routes = [
@@ -12,6 +13,11 @@ const routes = [
         path: '/',
         exact: true,
         component: Home
+      },
+      {
+        path: '/oauth',
+        exact: true,
+        component: Oauth
       },
       {
         path: '*',
