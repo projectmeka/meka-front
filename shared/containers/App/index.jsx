@@ -115,7 +115,7 @@ export default class App extends Component {
               <div className={style.accountInfo}>
                 {account && account.isLoggedIn && <div className={style.profile}>
                   <div>
-                    <img alt="avatar" src={this.state.userInfo.profile.picture} />
+                    <img alt="avatar" src={require('resources/images/avatar-test.jpg')} />
                   </div>
                   <span className={style.name}>{this.state.userInfo.profile.name}</span>
                 </div>}
