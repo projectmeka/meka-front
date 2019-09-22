@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@polkadot/api": "^0.92.1",
+    "@polkadot/keyring": "^1.4.1",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
@@ -42,6 +43,7 @@
     "react-dom": "^16.9.0",
     "react-dropzone": "^4.2.1",
     "react-hot-loader": "^4.12.13",
+    "react-html5-camera-photo": "^1.4.3",
     "react-intl": "^2.4.0",
     "react-lazy-load": "^3.0.12",
     "react-redux": "^5.0.6",

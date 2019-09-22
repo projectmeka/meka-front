@@ -64,7 +64,7 @@ table {
   align-items: flex-start;
   text-align: center;
   color: var(--primary-text-color);
-  
+
   .transitionBackground {
     position: absolute;
     left: 0;
@@ -96,18 +96,39 @@ table {
       height: 140px;
       padding-left: 80px;
       padding-right: 80px;
-      
-      .branding {        
+      justify-content: space-between;
+
+      .branding {
         width: 100px;
         height: 100px;
-        
+
         img {
           width: 100px;
           height: 100px;
         }
       }
+
+      .accountInfo {
+        .profile {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          
+          img {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            margin-right: 10px;
+          }
+          
+          .name {
+            color: white;
+            font-size: 20px;
+          }
+        }
+      }
     }
-    
+
     .transitionContext {
       position: absolute;
       left: 0;

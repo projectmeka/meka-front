@@ -47,12 +47,12 @@ const baseConfig = {
         enforce: 'pre',
         exclude: resolve(__dirname, 'node_modules')
       },
-      {
-        test: /\.tsx?$/,
-        loader: 'tslint-loader',
-        enforce: 'pre',
-        exclude: resolve(__dirname, 'node_modules')
-      },
+      /* {
+       *   test: /\.tsx?$/,
+       *   loader: 'tslint-loader',
+       *   enforce: 'pre',
+       *   exclude: resolve(__dirname, 'node_modules')
+       * }, */
       {
         test: /\.(t|j)sx?$/,
         exclude: [

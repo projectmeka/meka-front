@@ -1,7 +1,7 @@
 import storage from 'utils/storage'
 
 export const fetchBase = async (method: string = 'GET', endPoint: string = '/hello', params: object = {}, customeHeaders: object = {}) => {
-  let url = `http://cb174c25.ngrok.io${endPoint}`
+  let url = `http://5279521c.ngrok.io${endPoint}`
 
   const headers: { Accept: string, 'Content-Type': string, Authorization?: any } = {
     Accept: 'application/json',
@@ -13,6 +13,7 @@ export const fetchBase = async (method: string = 'GET', endPoint: string = '/hel
   if (token) {
     const authorization = token && `Bearer ${token}`
     headers.Authorization = authorization || null
+    console.log('headers.Authorization', headers.Authorization)
   }
 
   const options: any = { method, headers }
